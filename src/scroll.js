@@ -6,12 +6,12 @@ import {
 
 export default function animateScroll(hash, animate) {
   const element = document.querySelector(hash);
-  const { offset, duration, easing } = animate || { offset: 0, duration: 400, easing: easeOutQuad };
+  const { offset, duration, easing } = animate || {} ;
 
   scrollTo(element, offset, duration, easing);
 }
 
-function scrollTo(element, offset, duration, easingFunc) {
+function scrollTo(element, offset = 0, duration = 400, easing = easeOutQuad) {
   const start = getPageScrollTop();
   const to = elementOffsetTop(element) + offset;
   const change = to - start;
@@ -19,7 +19,7 @@ function scrollTo(element, offset, duration, easingFunc) {
 
   function animate(elapsedTime) {
     const elapsed = elapsedTime + increment;
-    const position = easingFunc(null, elapsed, start, change, duration);
+    const position = easing(undefined, elapsed, start, change, duration);
 
     setPageScrollTop(position);
 
