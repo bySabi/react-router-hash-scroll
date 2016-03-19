@@ -18,16 +18,8 @@ export default class _hashLink extends React.Component {
     onClick: func,
     animateScroll: func,
     animate: object
-  }
-  
-  animateScroll = (animate) => {
-    const { hash } = this.props;
-    const element = document.querySelector(hash);
-    const { offset, duration } = animate || { offset: 0, duration: 400 };
+  };
 
-    scrollTo(element, offset, duration);    
-  }
-  
   handleClick = (event) => {
     const { onClick, animateScroll, animate } = this.props;
 

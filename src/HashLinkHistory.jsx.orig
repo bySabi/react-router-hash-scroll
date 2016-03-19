@@ -6,13 +6,11 @@ function animateScroll(event, animate) {
     const hash = window.location.hash;
 
     if (hash) {
-    /*
       const element = document.querySelector(hash);
 
       const { offset, duration } = animate || { offset: 0, duration: 400 };
 
       scrollTo(element, offset, duration);
-     */
     }
   });
 }
