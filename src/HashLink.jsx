@@ -3,7 +3,8 @@ import animateScroll from './scroll';
 
 function _animateScroll(event, animate) {
   event.preventDefault();
-  animateScroll(event, animate);
+  const hash = event.target.getAttribute('href');
+  animateScroll(hash, animate);
 }
 
 export default function HashLink(props) {

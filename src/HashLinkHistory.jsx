@@ -2,7 +2,10 @@ import _hashLink from './_hashLink';
 import animateScroll from './scroll';
 
 function _animateScroll(event, animate) {
-  setTimeout(animateScroll, 0, event, animate);
+  setTimeout(() => {
+    const hash = window.location.hash;
+    if (hash) animateScroll(hash, animate);
+  });
 }
 
 export default function HashLinkHistory(props) {

@@ -4,8 +4,7 @@ import {
   elementOffsetTop
 } from './utils';
 
-export default function animateScroll(event, animate) {
-  const hash = event.target.getAttribute('href');
+export default function animateScroll(hash, animate) {
   const element = document.querySelector(hash);
   const { offset, duration } = animate || { offset: 0, duration: 400 };
 
