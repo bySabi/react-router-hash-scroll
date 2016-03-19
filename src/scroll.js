@@ -6,12 +6,12 @@ import {
 
 export default function animateScroll(hash, animate) {
   const element = document.querySelector(hash);
-  const { offset, duration } = animate || { offset: 0, duration: 400 };
+  const { offset, duration, easing } = animate || { offset: 0, duration: 400, easing: easeOutQuad };
 
-  scrollTo(element, offset, duration);
+  scrollTo(element, offset, duration, easing);
 }
 
-function scrollTo(element, offset, duration) {
+function scrollTo(element, offset, duration, easingFunc) {
   const start = getPageScrollTop();
   const to = elementOffsetTop(element) + offset;
   const change = to - start;
@@ -19,7 +19,7 @@ function scrollTo(element, offset, duration) {
 
   function animate(elapsedTime) {
     const elapsed = elapsedTime + increment;
-    const position = easeInOut(elapsed, start, change, duration);
+    const position = easingFunc(null, elapsed, start, change, duration);
 
     setPageScrollTop(position);
 
@@ -30,13 +30,7 @@ function scrollTo(element, offset, duration) {
   animate(0);
 }
 
-
-function easeInOut(currentTime, start, change, duration) {
-  currentTime /= duration / 2;
-  if (currentTime < 1) {
-    return change / 2 * currentTime * currentTime + start;
-  }
-  currentTime -= 1;
-  return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+// jQuery easing 'swing'
+function	easeOutQuad(x, t, b, c, d) {
+  return -c *(t/=d)*(t-2) + b;
 }
-

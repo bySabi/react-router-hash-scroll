@@ -56,8 +56,15 @@ Ex:
 
 ### default animation
 ```
-{ offset: 0, duration: 400 }
+{ offset: 0, duration: 400, easing: easeOutQuad }
 ```
+This setting is equivalent to default jQuery `easing: swing`
+
+## Easing functions links
+
+* [jQuery easings](http://api.jqueryui.com/easings/)
+* [Robert Penner's Easing Functions](http://robertpenner.com/easing/)
+* [Javascript source code](https://github.com/danro/jquery-easing/blob/master/jquery.easing.js)
 
 # component `HashLinkHistory`
 This component support browser [History](https://github.com/mjackson/history) #hash link navigation.
