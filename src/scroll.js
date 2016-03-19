@@ -4,7 +4,15 @@ import {
   elementOffsetTop
 } from './utils';
 
-export default function scrollTo(element, offset, duration) {
+export default function animateScroll(event, animate) {
+  const hash = event.target.getAttribute('href');
+  const element = document.querySelector(hash);
+  const { offset, duration } = animate || { offset: 0, duration: 400 };
+
+  scrollTo(element, offset, duration);
+}
+
+function scrollTo(element, offset, duration) {
   const start = getPageScrollTop();
   const to = elementOffsetTop(element) + offset;
   const change = to - start;

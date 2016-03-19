@@ -1,20 +1,11 @@
 import _hashLink from './_hashLink';
-import scrollTo from './scroll';
+import animateScroll from './scroll';
 
-function animateScroll(event, animate) {
+function _animateScroll(event, animate) {
   event.preventDefault();
-  
-  const hash = event.target.getAttribute('href');
-  
-/*  
-  const element = document.querySelector(hash);
-  
-  const { offset, duration } = animate || { offset: 0, duration: 400 };
-
-  scrollTo(element, offset, duration);
-*/  
+  animateScroll(event, animate);
 }
 
 export default function HashLink(props) {
-  return <_hashLink {...props} animateScroll={animateScroll} />;
+  return <_hashLink {...props} animateScroll={_animateScroll} />;
 }
