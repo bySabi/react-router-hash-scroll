@@ -1,21 +1,20 @@
-import $ from 'jquery';
-import _HashLink from './_HashLink';
+import _hashLink from './_hashLink';
+import scrollTo from './scroll';
 
-function scrollFn(event, scroll) {
+function animateScroll(event, animate) {
   setTimeout(() => {
     const hash = window.location.hash;
 
     if (hash) {
       const element = document.querySelector(hash);
-      const parent = $('html, body');
-      const scrollTop = $(element).offset().top - $(parent).offset().top;
-      const { animate, offset } = scroll || { animate: {duration: 'slow', easing: 'swing'} };
 
-      $(parent).animate({scrollTop: scrollTop + (offset || 0)}, animate);
+      const { offset, duration } = animate || { offset: 0, duration: 400 };
+
+      scrollTo(element, offset, duration);
     }
   });
 }
 
 export default function HashLinkHistory(props) {
-  return <_HashLink {...props} scrollFn={scrollFn} />;
+  return <_hashLink {...props} animateScroll={animateScroll} />;
 }

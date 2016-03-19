@@ -1,6 +1,6 @@
 {
   "name": "react-router-hash-scroll",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Customizable scroll animations for hash based link and React Router.",
   "files": [
     "lib"
@@ -19,8 +19,7 @@
     "react-router",
     "hash",
     "scroll",
-    "animate",
-    "jquey"
+    "animate"
   ],
   "author": "bySabi Files",
   "license": "MIT",
@@ -28,8 +27,7 @@
   },
   "peerDependencies": {
     "react": ">=0.14.7 || >15.0.0-rc",
-    "react-router": "2.x.x",
-    "jquery": "1.x.x || 2.x.x"
+    "react-router": "2.x.x"
   },
   "devDependencies": {
     "babel-cli": "6.x.x",

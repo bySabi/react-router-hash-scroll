@@ -1,17 +1,17 @@
-import $ from 'jquery';
-import _HashLink from './_HashLink';
+import _hashLink from './_hashLink';
+import scrollTo from './scroll';
 
-function scrollFn(event, scroll) {
+function animateScroll(event, animate) {
   event.preventDefault();
   
-  const element = $(event.target);
-  const parent = $('html, body');
-  const scrollTop= $(element.attr('href')).offset().top;
-  const { animate, offset } = scroll || { animate: {duration: 'slow', easing: 'swing'} };
+  const hash = event.target.getAttribute('href');
+  const element = document.querySelector(hash);
+  
+  const { offset, duration } = animate || { offset: 0, duration: 400 };
 
-  $(parent).animate({scrollTop: scrollTop + (offset || 0)}, animate);
+  scrollTo(element, offset, duration);
 }
 
 export default function HashLink(props) {
-  return <_HashLink {...props} scrollFn={scrollFn} />;
+  return <_hashLink {...props} animateScroll={animateScroll} />;
 }

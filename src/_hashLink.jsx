@@ -11,22 +11,22 @@ function reCreateTo(to) {
 
 const { object, string, oneOfType, func } = React.PropTypes;
 
-export default class _HashLink extends React.Component {
+export default class _hashLink extends React.Component {
 
   static propTypes = {
     to: oneOfType([ string, object ]).isRequired,
-    scroll: object,
     onClick: func,
-    scrollFn: func
+    animateScroll: func,
+    animate: object
   };
 
   handleClick = (event) => {
-    const { onClick, scrollFn, scroll } = this.props;
+    const { onClick, animateScroll, animate } = this.props;
 
     if (onClick)
       onClick(event);
 
-    scrollFn(event, scroll);
+    animateScroll(event, animate);
   }
 
   render() {

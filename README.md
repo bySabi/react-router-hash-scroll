@@ -46,19 +46,17 @@ export default (props) => (
 
 # Custom animation
 
-Animation relay on jQuery CSS [animate](http://api.jquery.com/animate/)
-
 Animate behavior can be customize per each `#hash link`.
 
 Ex:
 
 ```
-<HashLink to="#aboutus" animate={{ animate: {duration: 'fast', easing: 'easeOutElastic'} }} offset="100" className="nav-link">Home</HashLink>
+<HashLink to="#aboutus" animate={{ offset: 20, duration: 600 }} className="nav-link">Home</HashLink>
 ```
 
 ### default animation
 ```
-{animate: {duration: 'slow', easing: 'swing'}}
+{ offset: 0, duration: 400 }
 ```
 
 # component `HashLinkHistory`
