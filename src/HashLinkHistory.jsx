@@ -1,5 +1,6 @@
 import _hashLink from './_hashLink';
 import animateScroll from './scroll';
+import React from 'react';
 
 function _animateScroll(event, animate) {
   setTimeout(() => {
