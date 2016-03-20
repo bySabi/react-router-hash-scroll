@@ -58,7 +58,7 @@ Ex:
 ```
 { offset: 0, duration: 400, easing: easeOutQuad }
 ```
-This setting is equivalent to default jQuery `easing: swing`
+This setting is equivalent to default jQuery.animate `easing: swing`
 
 ## Easing functions links
 
