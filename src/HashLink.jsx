@@ -4,7 +4,7 @@ import React from 'react';
 
 function _animateScroll(event, animate) {
   event.preventDefault();
-  const hash = event.target.getAttribute('href');
+  const hash = event.target.hash;
   animateScroll(hash, animate);
 }
 
