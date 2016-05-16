@@ -1,3 +1,5 @@
+# DEPRECATED - This package is deprecated in favor of: [react-scrollchor](https://github.com/bySabi/react-scrollchor)
+
 # react-router-hash-scroll
 A `React` component for animate scroll to #hash `on page` link.
 
